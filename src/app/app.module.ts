@@ -7,6 +7,8 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AlbumsComponent } from './pages/albums/albums.component';
+import { AlbumItemComponent } from './components/album-item/album-item.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './pages/home/home.component';
     AboutPageComponent,
     CarouselComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AlbumsComponent,
+    AlbumItemComponent
   ],
   imports: [
     BrowserModule,

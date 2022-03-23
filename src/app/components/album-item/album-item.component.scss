@@ -1,0 +1,28 @@
+@mixin transition {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      $x: ($i - 1) * 10;
+      transform: translate(calc(-50% - #{$x / 2}px), calc(-50% + #{$x / 2}px));
+    }
+  }
+}
+
+.card {
+  .photos {
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      box-shadow: 2px 2px 2px #555;
+      top: 50%;
+      left: 50%;
+      max-width: 100%;
+      max-height: 100%;
+      transform: translate(-50%, -50%);
+
+      @include transition;
+    }
+  }
+}
