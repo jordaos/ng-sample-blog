@@ -1,4 +1,4 @@
-<header class="d-flex flex-wrap justify-content-center py-3 border-bottom bg-dark">
+<header class="d-flex flex-wrap justify-content-center py-3 bg-dark" #appHeader>
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -15,13 +15,12 @@
   </div>
 </header>
 
-<app-carousel></app-carousel>
 
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="app-container" #appContainer>
+  <app-carousel></app-carousel>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
-<footer class="container bg-dark text-white">
-  <p class="float-end"><a href="#">Back to top</a></p>
-  <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-</footer>
+<app-footer #appFooter></app-footer>
