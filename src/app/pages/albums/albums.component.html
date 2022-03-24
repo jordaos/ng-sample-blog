@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-md-3 py-1" *ngFor="let item of lastAlbums">
-      <app-album-item></app-album-item>
+    <div class="col-md-3 col-sm-6 py-1" *ngFor="let album of lastAlbums">
+      <app-album-item [album]="album"></app-album-item>
     </div>
   </div>
 </div>

@@ -1,16 +1,14 @@
-<div class="card" style="width: 18rem;">
+<div class="card h-100">
   <div class="photos">
     <div [class.show]="isLoadingImages">
       <img src="assets/loader.svg" class="loader" alt="Loader">
     </div>
     <div [class.show]="!isLoadingImages" #imagesContent>
-      <img src="assets/slide1.svg" class="gallery-image" (load)="imageLoaded()">
-      <img src="assets/slide2.svg" class="gallery-image" (load)="imageLoaded()">
-      <img src="assets/slide3.svg" class="gallery-image" (load)="imageLoaded()">
+      <img *ngFor="let photo of photos" [src]="photo.thumbnailUrl" class="gallery-image" (load)="imageLoaded()">
     </div>
   </div>
   <div class="card-body bg-light">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{ album.title }}</p>
     <a href="#" class="btn btn-outline-secondary btn-sm">
       <i class="fa fa-eye"></i>
     </a>

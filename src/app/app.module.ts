@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { AlbumItemComponent } from './components/album-item/album-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpCacheInterceptorModule, useHttpCacheLocalStorage } from '@ngneat/cashew';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,13 @@ import { AlbumItemComponent } from './components/album-item/album-item.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpCacheInterceptorModule.forRoot({
+      ttl: 600000, // 10 min
+    })
   ],
-  providers: [],
+  providers: [useHttpCacheLocalStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
