@@ -22,4 +22,10 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should match snapshot', () => {
+    const element = fixture.nativeElement as HTMLElement;
+    const appTitle = element.querySelector('span[data-test-id="app-title"]')?.textContent;
+    expect(appTitle).toBe("Sample Blog");
+  });
 });

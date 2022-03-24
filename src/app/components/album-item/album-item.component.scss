@@ -2,7 +2,7 @@
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       $x: ($i - 1) * 10;
-      transform: translate(calc(-50% - #{$x / 2}px), calc(-50% + #{$x / 2}px));
+      transform: translate(calc(-50% - #{calc($x / 2)}px), calc(-50% + #{calc($x / 2)}px));
     }
   }
 }

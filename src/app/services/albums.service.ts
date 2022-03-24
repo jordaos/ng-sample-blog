@@ -11,7 +11,7 @@ import { Photo } from 'app/interfaces/Photo';
   providedIn: 'root'
 })
 export class AlbumsService {
-  private endpoint = 'albums';
+  endpoint = 'albums';
 
   constructor(private http: HttpClient){}
 
