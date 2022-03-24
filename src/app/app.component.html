@@ -1,21 +1,4 @@
-<header class="d-flex flex-wrap justify-content-center py-3 bg-dark" #appHeader>
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <span class="fs-5">Simple header</span>
-      </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link text-white">Home</a></li>
-        <li class="nav-item"><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link text-white">About</a></li>
-        <li class="nav-item"><a routerLink="/albums" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link text-white">Albums</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">FAQs</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
+<app-header #appHeader></app-header>
 
 <div class="app-container" #appContainer>
   <router-outlet></router-outlet>
