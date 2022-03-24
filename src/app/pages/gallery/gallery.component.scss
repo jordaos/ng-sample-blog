@@ -1,0 +1,31 @@
+.card {
+  .card-img-overlay {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    & > * {
+      z-index: 9;
+      position: relative;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: rgb(85,85,85);
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(68,68,68,0.7455357142857143) 61%, rgba(255,255,255,0) 100%);
+    }
+  }
+
+  &:hover {
+    .card-img-overlay {
+      opacity: 1;
+    }
+  }
+}

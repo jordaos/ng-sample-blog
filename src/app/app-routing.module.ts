@@ -1,3 +1,4 @@
+import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'albums', component: AlbumsComponent },
+  { path: 'albums/:id', component: GalleryComponent },
 ];
 
 @NgModule({

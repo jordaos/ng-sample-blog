@@ -11,6 +11,7 @@ import { AlbumsComponent } from './pages/albums/albums.component';
 import { AlbumItemComponent } from './components/album-item/album-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpCacheInterceptorModule, useHttpCacheLocalStorage } from '@ngneat/cashew';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpCacheInterceptorModule, useHttpCacheLocalStorage } from '@ngneat/ca
     FooterComponent,
     HomeComponent,
     AlbumsComponent,
-    AlbumItemComponent
+    AlbumItemComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

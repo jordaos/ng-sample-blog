@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6 my-3" *ngFor="let photo of photos">
+      <div class="card bg-dark text-white">
+        <img [src]="photo.url" class="card-img" [alt]="photo.title">
+        <div class="card-img-overlay">
+          <p class="card-text">{{ photo.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
