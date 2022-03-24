@@ -15,7 +15,6 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
     this.albumsService.getAll()
       .then((response: Array<Album>) => {
-        console.log(response);
         this.lastAlbums = response.slice(0, 10);
       })
   }
