@@ -32,6 +32,8 @@ jobs:
       run: npm run build -- --prod
     - name: Test
       run: npm run test -- --prod
+    - name: Lint
+      run: npm run lint
     - name: Deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

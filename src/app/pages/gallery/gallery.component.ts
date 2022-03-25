@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from 'app/interfaces/Photo';
 import { AlbumsService } from 'app/services/albums.service';
@@ -8,7 +8,7 @@ import { AlbumsService } from 'app/services/albums.service';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnInit, OnDestroy {
 
   private routerSubscriber: any;
   id: number;
