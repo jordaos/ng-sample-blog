@@ -1,6 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MockAlbumsService } from 'app/mocks/services';
+import { AlbumsService } from 'app/services/albums.service';
 
 import { AlbumsComponent } from './albums.component';
 
@@ -12,6 +14,9 @@ describe('AlbumsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AlbumsComponent ],
       imports: [ HttpClientModule, RouterTestingModule ],
+      providers: [
+        { provide: AlbumsService, useValue: MockAlbumsService }
+      ]
     })
     .compileComponents();
   });
@@ -24,5 +29,9 @@ describe('AlbumsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set 10 albums after component init', () => {
+    expect(component.lastAlbums.length).toBe(10);
   });
 });
