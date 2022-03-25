@@ -8,9 +8,8 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
-    })
-    .compileComponents();
+      declarations: [FooterComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,21 @@ describe('FooterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return correct height', () => {
+    const elementHeight = component.appFooter.nativeElement.clientHeight;
+    expect(component._getHeight()).toBe(elementHeight);
+  });
+
+  it('should call scrollTo on goToTop', () => {
+    // given
+    spyOn(window, 'scrollTo');
+
+    // when
+    component.goToTop();
+
+    // then
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 });

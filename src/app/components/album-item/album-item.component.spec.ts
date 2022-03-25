@@ -1,5 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AlbumsService } from 'app/services/albums.service';
+import { MockAlbumsService } from 'app/mocks/services';
 
 import { AlbumItemComponent } from './album-item.component';
 
@@ -11,6 +13,9 @@ describe('AlbumItemComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AlbumItemComponent ],
       imports: [ HttpClientModule ],
+      providers: [
+        { provide: AlbumsService, useValue: MockAlbumsService }
+      ]
     })
     .compileComponents();
   });
@@ -31,5 +36,31 @@ describe('AlbumItemComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have isLoadingImages as true before load all images', () => {
+    // given
+    const imageCount = 2;
+
+    // when
+    for (let i = 0; i < imageCount; i++) {
+      component.imageLoaded();
+    }
+
+    // then
+    expect(component.isLoadingImages).toBeTrue();
+  });
+
+  it('should have isLoadingImages as false after load component', () => {
+    // given
+    const imageCount = 4;
+
+    // when
+    for (let i = 0; i < imageCount; i++) {
+      component.imageLoaded();
+    }
+
+    // then
+    expect(component.isLoadingImages).toBeFalse();
   });
 });

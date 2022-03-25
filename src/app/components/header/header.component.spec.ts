@@ -23,9 +23,14 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should match snapshot', () => {
+  it('should have correct site title', () => {
     const element = fixture.nativeElement as HTMLElement;
     const appTitle = element.querySelector('span[data-test-id="app-title"]')?.textContent;
     expect(appTitle).toBe("Sample Blog");
+  });
+
+  it('should return correct height', () => {
+    const elementHeight = component.appHeader.nativeElement.clientHeight;
+    expect(component._getHeight()).toBe(elementHeight);
   });
 });
