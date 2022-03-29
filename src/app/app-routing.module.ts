@@ -1,9 +1,9 @@
-import { GalleryComponent } from './pages/gallery/gallery.component';
-import { AlbumsComponent } from './pages/albums/albums.component';
-import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutPageComponent } from '@/pages/about-page/about-page.component';
+import { AboutPageComponent } from 'app/pages/about-page/about-page.component';
+import { GalleryComponent } from 'app/pages/gallery/gallery.component';
+import { AlbumsComponent } from 'app/pages/albums/albums.component';
+import { HomeComponent } from 'app/pages/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
