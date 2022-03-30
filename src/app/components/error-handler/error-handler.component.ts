@@ -1,4 +1,6 @@
 import { Component, Input, isDevMode, OnInit } from '@angular/core';
+
+import { UtilsService } from 'app/services/utils.service';
 import { ErrorObject } from 'app/interfaces/ErrorObject';
 
 @Component({
@@ -17,11 +19,13 @@ export class ErrorHandlerComponent implements OnInit {
     icon: 'fa-frown-o'
   };
 
-  constructor() { }
+  constructor(
+    private utilsService: UtilsService
+  ) { }
+
   ngOnInit(): void {
-    if (isDevMode() && this.errorObject.error) {
+    if (this.utilsService.isDevMode() && this.errorObject.error) {
       console.error(this.errorObject.error);
     }
   }
-
 }

@@ -35,11 +35,11 @@ export class AlbumsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const albums = this.albumsService.getAll()
-    .pipe(catchError(this.handleError))
-    .subscribe((response: Array<Album>) => {
-      this.lastAlbums = response.slice(0, 10);
-    })
+    this.albumsService.getAll()
+      .pipe(catchError(this.handleError))
+      .subscribe((response: Array<Album>) => {
+        this.lastAlbums = response.slice(0, 10);
+      })
   }
 
 }

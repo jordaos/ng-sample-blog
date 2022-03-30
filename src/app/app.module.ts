@@ -14,7 +14,7 @@ import { HttpCacheInterceptorModule, useHttpCacheLocalStorage } from '@ngneat/ca
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
-import { ErrorHandlerComponent } from './error-handler/error-handler.component';
+import { ErrorHandlerComponent } from './components/error-handler/error-handler.component';
 
 @NgModule({
   declarations: [
