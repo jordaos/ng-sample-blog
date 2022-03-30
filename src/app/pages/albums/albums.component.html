@@ -1,5 +1,6 @@
 <div class="container py-5">
-  <div class="row">
+  <app-error-handler [errorObject]="errorObject" *ngIf="hasError"></app-error-handler>
+  <div class="row" *ngIf="!hasError">
     <div class="col-md-3 col-sm-6 py-1" *ngFor="let album of lastAlbums">
       <app-album-item [album]="album"></app-album-item>
     </div>

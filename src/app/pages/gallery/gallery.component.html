@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="row">
+  <app-breadcrumb [items]="breadcrumb"></app-breadcrumb>
+  <app-error-handler [errorObject]="errorObject" *ngIf="hasError"></app-error-handler>
+  <div class="row" *ngIf="!hasError">
     <div class="col-md-3 col-sm-6 my-3" *ngFor="let photo of photos">
       <div class="card bg-dark text-white">
         <img [src]="photo.url" class="card-img" [alt]="photo.title">

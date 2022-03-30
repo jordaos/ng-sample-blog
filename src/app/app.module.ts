@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpCacheInterceptorModule, useHttpCacheLocalStorage } from '@ngneat/cashew';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ErrorHandlerComponent } from './error-handler/error-handler.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HeaderComponent } from './components/header/header.component';
     AlbumsComponent,
     AlbumItemComponent,
     GalleryComponent,
-    HeaderComponent
+    HeaderComponent,
+    BreadcrumbComponent,
+    ErrorHandlerComponent
   ],
   imports: [
     BrowserModule,

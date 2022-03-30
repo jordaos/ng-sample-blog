@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+// Default variable overrides
+$primary: #B8B42D;
+$secondary: #697a21;
+$info: #FFFCE8;
+$dark: #3e363f;
+$light: #cbddeb;
+$red: #dd403a;
+
+// Required
+@import "~bootstrap/scss/bootstrap";

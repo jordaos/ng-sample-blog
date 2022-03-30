@@ -1,0 +1,8 @@
+<div class="error-handler">
+  <i class="fa" [ngClass]="errorObject.icon || defaults.icon" aria-hidden="true"></i>
+  <h1>{{ errorObject.title || defaults.title }}</h1>
+  <p>
+    <b *ngIf="errorObject.code">{{ errorObject.code }}!</b>
+    {{ errorObject.message }}
+  </p>
+</div>
